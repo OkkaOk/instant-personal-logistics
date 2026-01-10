@@ -32,7 +32,7 @@ function logistics.transfer_from_all_networks(player, logistic_point)
 	local surfaces = {}
 
 	for surface, networks in pairs(player.force.logistic_networks) do
-		if settings.global["ipl-transfer-mode"].value == "interplanetary" or surface == player.surface.name then
+		if settings.global["ipl-transfer-mode"].value == "interplanetary" or surface == player.physical_surface.name then
 			surfaces[#surfaces+1] = { name = surface, networks = networks }
 		end
 	end
@@ -41,7 +41,7 @@ function logistics.transfer_from_all_networks(player, logistic_point)
 
 	-- Sorts the networks according to the request_priority
 	table.sort(surfaces, function (a, b)
-		return (request_priority == "current" and a.name == player.surface.name) or (a.name == request_priority)
+		return (request_priority == "current" and a.name == player.physical_surface.name) or (a.name == request_priority)
 	end)
 
 	local requests_fulfilled = true
@@ -64,7 +64,7 @@ function logistics.transfer_from_all_networks(player, logistic_point)
 
 	-- Sorts the networks according to the trash_priority
 	table.sort(surfaces, function (a, b)
-		return (trash_priority == "current" and a.name == player.surface.name) or (a.name == trash_priority)
+		return (trash_priority == "current" and a.name == player.physical_surface.name) or (a.name == trash_priority)
 	end)
 
 	local trash_emptied = true
@@ -89,7 +89,7 @@ end
 ---@param player LuaPlayer
 ---@param logistic_point LuaLogisticPoint
 function logistics.transfer_from_local_network(player, logistic_point)
-	local network = player.surface.find_logistic_network_by_position(player.position, player.force)
+	local network = player.physical_surface.find_logistic_network_by_position(player.physical_position, player.force)
 	if not network then return end
 
 	logistics.handle_requests(network, player, logistic_point)
