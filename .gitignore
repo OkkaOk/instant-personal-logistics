@@ -1,8 +1,2 @@
-# Blocklist files/folders in same directory as the .gitignore file
-/*
-
-# Include these files...
-!.gitignore
-
-# And these folders
-!instant-personal-logistics/
+.vscode
+*.zip
