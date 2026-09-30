@@ -1,12 +1,12 @@
 {
-  "name": "instant-personal-logistics",
-  "version": "1.3.1",
-  "title": "Instant Personal Logistics",
-  "author": "Okka",
-  "factorio_version":"2.0",
-  "dependencies": [
-      "base >= 2.0",
-		"? space-age >= 2.0"
-  ],
-  "description": "Makes personal logistic requests and trash collection happen instantly"
+	"name": "instant-personal-logistics",
+	"version": "1.3.2",
+	"title": "Instant Personal Logistics",
+	"author": "Okka",
+	"factorio_version": "2.1",
+	"dependencies": [
+		"base >= 2.1",
+		"? space-age >= 2.1"
+	],
+	"description": "Makes personal logistic requests and trash collection happen instantly"
 }
