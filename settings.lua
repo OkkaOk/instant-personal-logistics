@@ -1,3 +1,4 @@
+local planet_priorities = { "current", "nauvis", "vulcanus", "fulgora", "gleba", "aquilo" }
 
 data:extend({
 	{
@@ -19,7 +20,7 @@ data:extend({
 		name = "ipl-trash-priority",
 		setting_type = "runtime-per-user",
 		default_value = "current",
-		allowed_values = { "current", "nauvis", "vulcanus", "fulgora", "gleba", "aquilo" },
+		allowed_values = planet_priorities,
 		order = "bb",
 	},
 	{
@@ -34,7 +35,7 @@ data:extend({
 		name = "ipl-request-priority",
 		setting_type = "runtime-per-user",
 		default_value = "current",
-		allowed_values = { "current", "nauvis", "vulcanus", "fulgora", "gleba", "aquilo" },
+		allowed_values = planet_priorities,
 		order = "cb",
 	},
 	{
@@ -42,14 +43,14 @@ data:extend({
 		name = "ipl-delete-trash-overflow",
 		setting_type = "runtime-per-user",
 		default_value = false,
-		order = "d",
+		order = "da",
 	},
 	{
 		type = "bool-setting",
 		name = "ipl-notify-full",
 		setting_type = "runtime-per-user",
 		default_value = true,
-		order = "d",
+		order = "db",
 	},
 	{
 		type = "string-setting",
@@ -57,14 +58,14 @@ data:extend({
 		setting_type = "runtime-global",
 		default_value = "local",
 		allowed_values = { "local", "planetary", "interplanetary" },
-		order = "d",
+		order = "dc",
 	},
 	{
-      type = "int-setting",
-      name = "ipl-ticks-per-transfer",
-      setting_type = "runtime-global",
-      default_value = 60,
+		type = "int-setting",
+		name = "ipl-ticks-per-transfer",
+		setting_type = "runtime-global",
+		default_value = 60,
 		minimum_value = 1,
-		order = "d",
-   },
+		order = "de",
+	},
 })
